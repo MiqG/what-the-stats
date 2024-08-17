@@ -27,7 +27,7 @@ Welcome to **What The Stats!?** — a fun web application that generates interes
 
 - **Frontend**: React.js
 - **API**: Hugging Face Inference API (Mistral-7B model)
-- **Deployment**: GitHub Pages / Vercel / Netlify
+- **Environment Management**: Mamba (Conda)
 
 ## Setup
 
@@ -35,6 +35,7 @@ To run this project locally, follow these steps:
 
 ### Prerequisites
 
+- mamba installed to reproduce the environment
 - Node.js and npm installed
 - A Hugging Face API key
 
@@ -46,22 +47,34 @@ To run this project locally, follow these steps:
     cd what-the-stats
     ```
 
-2. **Install dependencies:**
+2. **Create a conda environment from the `environment.yml` file:**
+    ```bash
+    conda env create -f environment.yml
+    ```
+
+3. **Activate the conda environment:**
+    ```bash
+    conda activate what-the-stats
+    ```
+
+    Replace `what-the-stats` with the name of the environment specified in `environment.yml`.
+
+4. **Install JavaScript dependencies:**
     ```bash
     npm install
     ```
 
-3. **Create a `.env` file:**
+5. **Create a `.env` file:**
     ```bash
     touch .env
     ```
 
-4. **Add your Hugging Face API key to the `.env` file:**
+6. **Add your Hugging Face API key to the `.env` file:**
     ```
     REACT_APP_HUGGING_FACE_API_KEY=your-hugging-face-api-key
     ```
 
-5. **Start the development server:**
+7. **Start the development server:**
     ```bash
     npm start
     ```
@@ -75,40 +88,6 @@ To run this project locally, follow these steps:
 3. Click on "Generate Stat" to generate a statistic.
 4. Use the "Surprise Me!" button to generate random statistics.
 5. View or hide the prompt used for generation by clicking the "Show Prompt" button.
-
-## Deployment
-
-### Deploying to GitHub Pages
-
-1. **Install the `gh-pages` package:**
-    ```bash
-    npm install gh-pages --save-dev
-    ```
-
-2. **Update the `package.json` file:**
-
-    Add the following to your `package.json`:
-
-    ```json
-    "homepage": "https://your-username.github.io/what-the-stats",
-    "scripts": {
-      "predeploy": "npm run build",
-      "deploy": "gh-pages -d build"
-    }
-    ```
-
-3. **Deploy the app:**
-    ```bash
-    npm run deploy
-    ```
-
-    Your app will be available at `https://your-username.github.io/what-the-stats`.
-
-### Deploying to Vercel or Netlify
-
-1. **Sign up** for an account on [Vercel](https://vercel.com) or [Netlify](https://netlify.com).
-2. **Link your GitHub repository** to Vercel or Netlify.
-3. **Deploy** directly from the dashboard. Both platforms will automatically build and deploy your app.
 
 ## Contributing
 
