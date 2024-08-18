@@ -26,7 +26,7 @@ Welcome to **What The Stats!?** — a fun web application that generates interes
 ## Tech Stack
 
 - **Frontend**: React.js
-- **API**: Hugging Face Inference API (Mistral-7B model)
+- **API**: Hugging Face Inference API (Mistral-7B-Instruct-v0.3 model)
 - **Environment Management**: Mamba (Conda)
 
 ## Setup

@@ -43,7 +43,7 @@ function App() {
     try {
       setLoading(true);
       const response = await axios.post(
-        'https://api-inference.huggingface.co/models/mistralai/Mistral-7B-v0.1',
+        'https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3',
         { inputs: generatedPrompt },
         {
           headers: {
